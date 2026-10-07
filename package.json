@@ -1,0 +1,20 @@
+{
+  "name": "skillbridge-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SkillBridge AI — From Skills to Opportunities. Built for BUILD FOR BHARAT 2.0 by Team THE PROCESSORS.",
+  "scripts": {
+    "setup": "npm run install:all && npm run db:push && npm run db:seed",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "db:push": "cd server && npx prisma db push",
+    "db:seed": "cd server && npx prisma db seed",
+    "db:studio": "cd server && npx prisma studio"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
